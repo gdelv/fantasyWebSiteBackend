@@ -1,0 +1,17 @@
+{
+  "development": {
+    "database": "fantasy_website_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "database": "fantasy_website_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "database": "fantasy_website_production",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
