@@ -1,4 +1,16 @@
 const { User } = require('../models');
+// const bcrypt = require('bcrypt')
+// const jwt = require('jsonwebtoken')
+
+// const SALT_ROUNDS = 11
+// const TOKEN_KEY =  'fantasykey'
+
+// const join = async(req,res) => {
+//     try {
+
+//     }
+// }
+
 
 const createUser = async (req, res) => {
     try {
