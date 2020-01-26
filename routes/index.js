@@ -9,8 +9,7 @@ router.put('/users/:id', controllers.updateUser)
 router.delete('/users/:id', controllers.deleteUser)
 router.post('/users', controllers.createUser)
 
-
-
-// router.post('/sign-up', controllers.join)
+router.post('/sign-up', controllers.join)
+router.post('/sign-in', controllers.logIn)
 
 module.exports = router;
