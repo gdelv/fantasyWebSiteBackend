@@ -35,34 +35,30 @@ const join = async (req, res) => {
 };
 
 const logIn = async (req, res) => {
-    try {
-        console.log(req.body)
-        const { userName, password } = req.body
-        const user = await User.findOne({
-            where: {
-                userName
-            }
-        })
-        console.log(user.dataValues)
-        if(await bcrypt.compare(password, user.dataValues.password_digest)) {
-            const payload = {
-                id:user.id,
-                userName: user.userName,
-                email: user.email
-            }
-            const token = jwt.sign(payload, TOKEN_KEY)
-            return res.status(201).json({ user, token })
-        }
-         else {
-            res.status(401).send('Invalid Login')
-        }
-
-} catch(error) {
-    return res.status(500).json({ error:error.message })
-}
-}
-
-
+  try {
+    console.log(req.body);
+    const { userName, password } = req.body;
+    const user = await User.findOne({
+      where: {
+        userName
+      }
+    });
+    console.log(user.dataValues);
+    if (await bcrypt.compare(password, user.dataValues.password_digest)) {
+      const payload = {
+        id: user.id,
+        userName: user.userName,
+        email: user.email
+      };
+      const token = jwt.sign(payload, TOKEN_KEY);
+      return res.status(201).json({ user, token });
+    } else {
+      res.status(401).send("Invalid Login");
+    }
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
 
 const createUser = async (req, res) => {
   try {
